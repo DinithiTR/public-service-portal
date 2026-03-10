@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  --shadow-subtle: 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-elevated: 0 4px 12px rgba(0,0,0,0.08);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --transition: all 0.2s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8fafc; /* Subtle off-white for civic feel */
+}
+
+/* 
+  Authoritative typography scaling
+  Merriweather applied only to major headings for a formal, document-like feel.
+*/
+.h-formal {
+  font-family: 'Merriweather', serif !important;
+  letter-spacing: -0.01em;
+}
+
+/*
+  Civic Hero Banner
+  Uses an Unsplash source and a deep blue overlay typical of government sites.
+*/
+.civic-hero {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1582218041075-81a6c42171c6?q=80&w=2670&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.civic-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(15, 33, 61, 0.9) 0%, rgba(15, 33, 61, 0.6) 100%);
+  z-index: 1;
+}
+
+.civic-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* 
+  Strict card styling for readability over flashiness 
+  No glassmorphism, flat borders, strong contrast
+*/
+.civic-card {
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-subtle) !important;
+  transition: var(--transition) !important;
+}
+
+.civic-card:hover {
+  box-shadow: var(--shadow-elevated) !important;
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
