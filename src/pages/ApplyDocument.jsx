@@ -94,7 +94,7 @@ export default function ApplyDocument() {
                   helperText="Fees may vary based on the document type."
                 />
 
-                <AdaptiveGrid columns={2} minColumnWidth={250} withContainerPadding={false}>
+                <AdaptiveGrid columns={2} minColumnWidth={250} withContainerPadding={true}>
                   <AdaptiveInput
                     label="National Identity Card Number"
                     placeholder="e.g. 199012345678 or 901234567V"
@@ -115,7 +115,7 @@ export default function ApplyDocument() {
 
             {step === 2 && (
               <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', gap: spacing.gapY * 1.5 }}>
-                <AdaptiveGrid columns={2} minColumnWidth={250} withContainerPadding={false}>
+                <AdaptiveGrid columns={2} minColumnWidth={250} withContainerPadding={true}>
                   <AdaptiveSelect
                     label="Residential District"
                     options={districts.map(d => ({ value: d, label: d }))}
